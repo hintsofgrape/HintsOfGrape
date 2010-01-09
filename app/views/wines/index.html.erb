@@ -1,24 +1,24 @@
 <h1>Listing wines</h1>
 
 <table>
+<% for wine in @wines %>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Image Url</th>
-  </tr>
-
-<% @wines.each do |wine| %>
-  <tr>
-    <td><%=h wine.name %></td>
-    <td><%=h wine.description %></td>
-    <td><%=h wine.image_url %></td>
-    <td><%= link_to 'Show', wine %></td>
-    <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-    <td><%= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+      <%= image_tag wine.image_url, :class => "span-2" %>
+    </td>
+    <td>
+      <dl>
+        <dt><%=h wine.name %></dt>
+        <dd><%= wine.description %></dd>
+      </dl>
+    </td>
+    <td>
+      <%= link_to 'Show', wine %><br/>
+      <%= link_to 'Edit', edit_wine_path(wine) %><br/>
+      <%= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
 <%= link_to 'New wine', new_wine_path %>

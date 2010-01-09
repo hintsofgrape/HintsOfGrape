@@ -9,9 +9,18 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
+<div class="container">
+  <div class="span-4">
+  <p style="color: green"><%= flash[:notice] %></p>
+  </div>
+  
+  <div class="span-16">
+  <%= yield %>
+  </div>
 
-<%= yield %>
+  <div class="span-4 last">
+  </div>
 
+</div>
 </body>
 </html>
