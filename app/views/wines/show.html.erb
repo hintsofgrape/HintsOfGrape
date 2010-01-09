@@ -1,0 +1,17 @@
+<p>
+  <b>Name:</b>
+  <%=h @wine.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @wine.description %>
+</p>
+
+<p>
+  <b>Image Url:</b>
+  <%=h @wine.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
