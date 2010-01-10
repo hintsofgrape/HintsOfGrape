@@ -16,6 +16,10 @@
     <%= f.text_field :image_url %>
   </p>
   <p>
+    <%= f.label :aroma %><br />
+    <%= f.select :aroma, Wine::AROMAS, :prompt => "Select aroma" %>
+  </p>
+  <p>
     <%= f.submit 'Create' %>
   </p>
 <% end %>

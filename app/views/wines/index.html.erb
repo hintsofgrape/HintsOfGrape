@@ -13,6 +13,9 @@
       </dl>
     </td>
     <td>
+      <%= wine.aroma if wine.aroma %>
+    </td>
+    <td>
       <%= link_to 'Show', wine %><br/>
       <%= link_to 'Edit', edit_wine_path(wine) %><br/>
       <%= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete %>
