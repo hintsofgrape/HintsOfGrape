@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe WinesController do
+  def authorize
+    mock_user = mock_model(User)
+    User.stub!(:find).and_return(true)
+  end
 
   #Delete these examples and add some real ones
   it "should use WinesController" do
@@ -10,6 +14,7 @@ describe WinesController do
 
   describe "GET 'index'" do
     it "should be successful" do
+      authorize
       wine = mock_model(Wine)
       Wine.stub!(:all).and_return(wine)
       get 'index'
@@ -19,6 +24,7 @@ describe WinesController do
 
   describe "GET 'show'" do
     it "should be successful" do
+      authorize
       wine = mock_model(Wine)
       Wine.stub!(:find).and_return(wine)
       get 'show'
@@ -28,6 +34,7 @@ describe WinesController do
 
   describe "GET 'new'" do
     it "should be successful" do
+      authorize
       wine = mock_model(Wine)
       Wine.stub!(:new).and_return(wine)
       get 'new'
@@ -37,6 +44,7 @@ describe WinesController do
 
   describe "GET 'edit'" do
     it "should be successful" do
+      authorize
       wine = mock_model(Wine)
       Wine.stub!(:find).and_return(wine)
       get 'edit'

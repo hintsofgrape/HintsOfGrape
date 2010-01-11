@@ -5,8 +5,7 @@ describe User do
     @valid_attributes = {
       :name => "value for name",
       :hashed_password => "value for hashed_password",
-      :salt => "value for salt",
-      :admin => 
+      :salt => "value for salt"
     }
   end
 
