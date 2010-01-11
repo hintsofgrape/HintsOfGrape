@@ -10,13 +10,13 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_wine_by_term term
-    wine_name = find_by_name(term)
+    wine_name = find(:first, :conditions => {:name => term})
     if wine_name
       aroma = wine_name.aroma
     else
       aroma = find_aroma_by_term term
     end
-    wines = find_all_by_aroma(aroma)
+    wines = find(:all, :conditions => {:aroma => aroma})
   end
 
   def self.find_aroma_by_term term 
