@@ -10,17 +10,14 @@
 <body>
 
 <div class="container">
-  <div class="span-4">
+  <%= render 'layouts/header' %>
+  <div id="content" class="round">
+    <% if flash[:notice] %>
+      <p style="color: green"><%= flash[:notice] %></p>
+    <% end %>
+    <%= yield %>
   </div>
-  
-  <div class="span-16">
-  <p style="color: green"><%= flash[:notice] %></p>
-  <%= yield %>
-  </div>
-
-  <div class="span-4 last">
-  </div>
-
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
