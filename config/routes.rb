@@ -1,7 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
   map.resources :wines
 
   map.wines '/wines', :controller => 'wines', :action => 'index'
+  map.users '/users', :controller => 'users', :action => 'index'
+  map.login '/login', :controller => 'admin', :action => 'login'
+  map.logout '/logout', :controller => 'admin', :action => 'logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

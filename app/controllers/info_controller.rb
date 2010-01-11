@@ -13,8 +13,11 @@ class InfoController < ApplicationController
     end
   end
 
-  private
   def get_results
     @results = (session[:results] ||= Results.new)
+  end
+
+protected
+  def authorize
   end
 end

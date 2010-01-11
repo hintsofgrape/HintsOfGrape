@@ -1,6 +1,12 @@
 <div id="footer">
   <ul class="navigation round">
     <li><%= link_to "Home", root_url %></li>
-    <li><%= link_to "Wines", wines_url %></li>
+    <% if session[:user_id] %>
+      <li><%= link_to "Wines", wines_url %></li>
+      <li><%= link_to "Users", users_url %></li>
+      <li><%= link_to "Log out", logout_url %></li>
+    <% else %>
+      <li><%= link_to "Log in", login_url %></li>
+    <% end %>
   </ul>
 </div>
