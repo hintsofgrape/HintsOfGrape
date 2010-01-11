@@ -1,6 +1,6 @@
 <h1>All known wines</h1>
 <table>
-  <% for wine in @wines %>
+  <% for wine in @results.wines %>
     <tr>
       <td>
         <%= image_tag wine.image_url, :class => "span-2" %>

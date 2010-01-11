@@ -1,5 +1,10 @@
-<% form_tag do %>
-  <label for="term">What do you like?</label>
-  <%= text_field_tag :term %>
+<% if @results %>
+  <% hidden_div_if(@results.wines.empty?, :id => "results") do %>
+    <%= render :partial => 'results', :object => @results %>
+  <% end %>
+<% end %>
+<% form_remote_tag :url =>'info/search' do %>
+  <%= label_tag 'term', "What do you like?" %>
+  <%= text_field_tag 'term' %>
   <%= submit_tag "Find Wine!" %>
 <% end %>
