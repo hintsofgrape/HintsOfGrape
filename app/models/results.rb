@@ -6,6 +6,6 @@ class Results
   end
 
   def total
-    @wines.count
+    @wines.size
   end
 end
